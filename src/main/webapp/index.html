@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script data-ad-client="ca-pub-7306583544199409" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>BMI</title>
+    <style>
+        body{
+            background-color: #aee9fc;
+        }
+        form{
+            align-content:"center";
+            width: 60%;
+            height: 100%;
+        }
+        select{
+            width: 100%;
+        }
+        p{
+            font-size: 130%;
+        }
+        input{
+            font-size: 120%;
+        }
+        table{
+            align:"center";
+        }
+    </style>
+</head>
+<body class="z-depth-1" id="bob">
+   <button class="btn btn-secondary" id="darkM">Dark Mode</button>
+   <button class="btn btn-secondary"  data-toggle="modal" data-target="#exampleModal" id="login">Login</button>
+   <button class="btn btn-secondary"  data-toggle="modal" data-target="#put1" id="login">Create User</button>
+   <div id="loginName"></div>
+   <h1 align="center">Health Central</h1>
+   <h3 align="center">BMI, weight loss and everything in between</h3>
+    
+<!--     
+login-->
+
+
+  
+  <!-- Login -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" align="center">
+            <form>
+          <h5>Name</h5>
+          <input type="text" id="name1" autocomplete="name">
+          <h5>Password</h5>
+          <input type="password" name="pw1" id="pw1" autocomplete="pw">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="loginBtn2">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- 
+login -->
+
+    <div align="center"  class="shadow-sm p-3 mb-5 bg rounded">
+        <!-- Button trigger modal -->
+  <!-- BMI and Calorie Calculator -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Body Metrics</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h5>Height</h5>
+            <input type="number" name="height" id="height" max="3" class="input-group mb-3">
+            <h5>Weight</h5>
+            <input type="number" name="weight" id="weight" max="300" class="input-group mb-3">
+            <h5>Age</h5>
+            <input type="number" name="Age" id="Age" max="130" class="input-group mb-3"> 
+            <h5>Preferred Calories Daily</h5>
+            <input type="number" name="pref" id="pref" max="130" class="input-group mb-3"> 
+            <h5>Gender</h5>
+            <select class="form-control" id="gender" >
+                <option value="Man" id="Man">Man</option>
+                <option value="Woman" id="Woman">Woman</option>
+              </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" id="res1">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ <!-- Button trigger modal -->
+  <!-- Create user -->
+  <div class="modal fade" id="put1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create user form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" align="center">
+            <form>
+          <h5>Name</h5>
+          <input type="text" id="name2" autocomplete="name">
+          <h5>Password</h5>
+          <input type="password" name="pw2" id="pw2" autocomplete="pw">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="createBtn">Create User</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Table -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">List of your saved results</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <table id="table1" class="table">
+              
+          </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+  
+    <form align="center">
+        
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2">
+            Fill out form
+          </button>
+        <input type="button" value="Get Data" id="rb" class="btn btn-secondary">
+         <button type="button" class="btn btn-secondary" id="123">All Your results</button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#staticBackdrop" hidden="true" id="yes">All Your results</button>
+       
+        <div id="results" style="background-color: #c8edfa; margin-top: 5%;" class="shadow p-3 mb-5 bg-white rounded"></div>
+       
+    </form>
+<div id="danger"></div>
+    <br>   
+</div>
+<div class="shadow-sm p-3 mb-5 bg rounded">
+<h4 align="center" class="font-weight-light">The Mifflin-St Jeor Equation is the one used to get BMR</h4>
+</div>
+</body>
+<script>
+//Login
+   
+
+    
+    const btnL=document.getElementById("loginBtn2");
+    btnL.onclick=login;
+    
+    
+    function login(){
+        var n =document.getElementById("name1").value;
+        var pw =document.getElementById("pw1").value;
+         let url="api/members/exist/"+n;
+        const promise1 = fetch(url);
+        const promise2 = promise1.then(function(response) {
+          return response.json();
+        });
+        promise2.then(function(data) {
+          console.log(data.name);
+          if(data.name===n){
+              if(data.pw===pw){
+        document.getElementById("loginName").innerHTML="<h4>"+"logged in as "+n+"</h4>";
+    }
+            }
+        });
+        
+    }
+    document.getElementById("createBtn").onclick=add;
+    function add(){
+        
+        
+        var n =document.getElementById("name2").value;
+         let url="api/members/exist/"+n;
+         const promise1 = fetch(url);
+        const promise2 = promise1.then(function(response) {
+          return response.json();
+        });
+   
+        promise2.then(function(data) {
+          console.log(data.name);
+      
+          var n =document.getElementById("name2").value;
+          if(data.name===n){
+             
+                  console.log(name,pw);
+            
+            console.log("its already there!!");  
+    
+            }else{
+                 var pw =document.getElementById("pw2").value;
+                 var n =document.getElementById("name2").value;
+        let options = {
+   method: "POST",
+   headers: {
+   'Accept': 'application/json',
+   'Content-Type': 'application/json'
+   },
+   body: JSON.stringify({
+     "name":n,
+     "pw":pw
+    })
+    };
+
+   fetch("api/members/", options); 
+   console.log("done");
+
+    }
+            });
+        }
+        
+          
+        
+        
+       
+
+
+document.getElementById("res1").onclick=addRes;
+
+    function addRes(){
+        var n =document.getElementById("name1").value;
+        var pw =document.getElementById("pw1").value;
+        var result=calcBMI();
+        let options = {
+   method: "POST",
+   headers: {
+   'Accept': 'application/json',
+   'Content-Type': 'application/json'
+   },
+   body: JSON.stringify({
+     "bmi":result,
+      "name":n,
+     "pw":pw
+   })
+};
+
+fetch("api/members/addRes",options);
+
+console.log(n,pw,result);
+        var n =document.getElementById("name1").value;
+
+const promise1 = fetch("api/members/allRes");
+    const promise2 = promise1.then(function(response) {
+   return response.json();
+    });
+    promise2.then(function(data) {
+        var s=data.filter(x=>{
+            return x.name===n;
+        });
+   var a="";
+   for (var i = 0; i < s.length; i++) {
+    a+="<tr><th>"+s[i].bmi+"</th><th>"+s[i].rDate+"</th>"+"</tr>";
+}
+document.getElementById("table1").innerHTML=a;
+    });
+}
+
+document.getElementById("123").onclick=chooser;
+function chooser(){
+    var inno= document.getElementById("loginName").innerHTML;
+        if(inno.includes("logged")){
+        document.getElementById("yes").onclick=buttonGetList;    
+document.getElementById("yes").click();
+    function buttonGetList(){
+        
+        //make display you need to login 
+        //before pushing
+        const promise1 = fetch("api/members/allRes");
+        const promise2 = promise1.then(function(response) {
+        console.log(response);
+        return response.json();
+        }); 
+        promise2.then(function(data) {
+                var n =document.getElementById("name1").value;
+        console.log(n);
+        var a=data.filter(x=>{
+            return x.name===n;
+        });
+        console.log(s);
+        var s="";
+        for (var i = 0; i < a.length; i++) {
+         s+="<tr><th>"+a[i].bmi+"</th><th>"+a[i].rDate+"</th>"+"</tr>";
+}
+document.getElementById("table1").innerHTML=s;
+document.getElementById("danger").innerHTML="";
+    });
+        
+     
+}
+}else{
+      
+        document.getElementById("danger").innerHTML="<div class=\"alert alert-danger\" role=\"alert\" id=\"danger\" >\r\n You need to login first \r\n<\/div>";
+    }
+    }
+document.getElementById("results").innerHTML+="<p>Information will appear, when form is filled out and Get Data is clicked &#128578</p>";
+
+//BMI CALCULATIONS
+    document.getElementById("rb").onclick=calcBMI;
+    function calcBMI(){
+        document.getElementById("results").innerHTML="";
+        //BMR = 10W + 6.25H - 5A + 5
+        var h=document.getElementById("height").value;
+        var w=document.getElementById("weight").value;        
+        var a=document.getElementById("Age").value;
+        var g=document.getElementById("gender").value; 
+        var c=document.getElementById("pref").value;
+        var result = w/(h*h);
+        h=h*100;
+        
+        if(g=="Man"){
+
+            var result2 = (10*w+6.25*h-5*a+5)+200;
+        }else{
+            var result2 = (10*w + 6.25*h - 5*a -161)+200;
+        }
+        var result3=((result2-c)*7)/7000;
+        result3 =result3.toFixed(2);
+       
+        let weeks=[];
+        weeks.push("Week 1 "+result3);
+        weeks.push("Week 2 "+result3*2);
+        weeks.push("Week 3 "+result3*3);
+        weeks.push("Week 4 "+result3*4);
+        let allweeks =weeks.map(x=>{
+            return "<tr><th>"+x+"</th></tr>";
+        });
+        allweeks.join("");
+        if(w<1,h<1){
+            document.getElementById("results").innerHTML+="<p>Need more Data</p>";
+            
+        }else{
+            document.getElementById("results").innerHTML+="<p>BMI Result: "+ 
+            result.toFixed(2)+"<br>"+"BMR Result: "
+             + result2.toFixed(2)+"<br><br>How much lossed weakly with daily chosen calorie amount <br><table align=\"center1\" class=\"table\">"+allweeks+"</table></p>";
+            
+        }
+        return result;
+    }
+
+
+//darkMode
+    let s=0;
+    document.getElementById("darkM").onclick=darkMode;
+    function darkMode(){        
+        if(s>0){            
+            var text =document.getElementsByTagName("h1");
+        for (var i = 0; i < text.length; i++) {
+            text[i].style.color = 'black';
+        }
+        var text2 =document.getElementsByTagName("h2");
+        for (var i = 0; i < text2.length; i++) {
+            text2[i].style.color = 'black';
+        }
+        var text3 =document.getElementsByTagName("h3");
+        for (var i = 0; i < text3.length; i++) {
+            text3[i].style.color = 'black';
+        }
+        var text4 =document.getElementsByTagName("h4");
+        for (var i = 0; i < text4.length; i++) {
+            text4[i].style.color = 'black';
+        }
+        var text5 =document.getElementsByTagName("h5");
+        for (var i = 0; i < text5.length; i++) {
+            text5[i].style.color = 'black';
+        }
+        
+        document.getElementById("bob").style.backgroundColor="#aee9fc";
+        
+            s=-1;
+        }
+        else{
+            var text =document.getElementsByTagName("h1");
+        for (var i = 0; i < text.length; i++) {
+            text[i].style.color = 'white';
+        }
+        var text2 =document.getElementsByTagName("h2");
+        for (var i = 0; i < text2.length; i++) {
+            text2[i].style.color = 'white';
+        }
+        var text3 =document.getElementsByTagName("h3");
+        for (var i = 0; i < text3.length; i++) {
+            text3[i].style.color = 'white';
+        }
+        var text4 =document.getElementsByTagName("h4");
+        for (var i = 0; i < text4.length; i++) {
+            text4[i].style.color = 'white';
+        }
+        var text5 =document.getElementsByTagName("h5");
+        for (var i = 0; i < text5.length; i++) {
+            text5[i].style.color = 'black';
+        }
+        
+        
+        document.getElementById("bob").style.backgroundColor="#49444d";
+        s++;
+        
+    }
+        
+}  
+
+</script>
+</html>
